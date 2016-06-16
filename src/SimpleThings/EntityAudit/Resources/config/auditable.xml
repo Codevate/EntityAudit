@@ -20,8 +20,7 @@
             <argument id="simplethings_entityaudit.config" type="service" />
         </service>
 
-        <service id="simplethings_entityaudit.reader" class="SimpleThings\EntityAudit\AuditReader">
-            <factory service="simplethings_entityaudit.manager" method="createAuditReader" />
+        <service id="simplethings_entityaudit.reader" class="SimpleThings\EntityAudit\AuditReader" factory-service="simplethings_entityaudit.manager" factory-method="createAuditReader">
             <argument type="service" id="doctrine.orm.default_entity_manager" />
         </service>
 
